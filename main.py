@@ -4,10 +4,10 @@
 
 ###### Housekeeping () ######
 ## Bonus Amount, fixed variables ##
-BONUS1 = 50.00
-BONUS2 = 75.00
-BONUS3 = 100.00
-BONUS4 = 200.00
+BONUS1 = 50.00 #<=30
+BONUS2 = 75.00 #31-69
+BONUS3 = 100.00 #70-199
+BONUS4 = 200.00 #>=200
 
 ## define number checks, return valid integers for processing ##
 def checkInputNum(testNumeric):
