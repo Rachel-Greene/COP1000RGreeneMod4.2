@@ -1,3 +1,12 @@
+## Program written to calculate empolyee bonuses based on: ##
+## sales, dollar value, number of shift ##
+
+## Bonus Amount, fixed variables ##
+BONUS1 = 50.00
+BONUS2 = 75.00
+BONUS3 = 100.00
+BONUS4 = 200.00
+
 # define number checks, return numbers
 def checkInputNum(testNumeric):
   if testNumeric.isnumeric():
@@ -9,35 +18,33 @@ def checkInputNum(testNumeric):
 # define nested if for total bonus amount #
 def bonusCalculation(bonusRange):
   if bonusRange <=30:
-    return bonus1
-  elif bonusRange > 30 and bonusRange <= 69:
-    return bonus2
-  elif bonusRange >= 70 and bonusRange <= 199:
-    return bonus3
+    return BONUS1
+  elif bonusRange <= 69:
+    return BONUS2
+  elif bonusRange <= 199:
+    return BONUS3
   else:
-    return bonus4
+    return BONUS4
 
-
-
-
-bonus1 = 50.00
-bonus2 = 75.00
-bonus3 = 100.00
-bonus4 = 200.00
 
 #input
-employeeName = input("Please enter employee Name: ")
-baseNumShift = input("Number of shifts: ")
-baseNumTransaction = input("Number of transactions: ")
-baseNumDollarValue = input("Dollar value of transactions: ")
+employeeName = input("Please enter employee name: ")
 
+baseNumShift = input("Enter number of shifts: ")
 validNumShift = checkInputNum(baseNumShift)
+
+baseNumTransaction = input("Enter number of transactions: ")
 validTransaction = checkInputNum(baseNumTransaction)
+
+baseNumDollarValue = input("Enter transaction dollar value: ")
 validDollarValue= checkInputNum(baseNumDollarValue)
+
+
 totalRange = (validDollarValue /validTransaction) /validNumShift
 
+
+## Outputs ##
 finalBonus = bonusCalculation(totalRange)
-
-
-print(totalRange)
-print(finalBonus)
+print("-----")
+print(f"Employee Name: {employeeName}")
+print(f"Employee Bonus: {finalBonus}")
